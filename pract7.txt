@@ -1,0 +1,33 @@
+#servercode
+from flask import Flask, jsonify, request
+app = Flask(__name__)
+@app.route('/add', methods = ['POST'])
+def add():
+    data = request.get_json()
+    a = data['a']
+    b = data['b']
+
+    result = a + b
+    answer = jsonify({'result':result})
+    return answer
+
+if__name__ == '_main_':
+    app.run()
+
+
+#clientcode
+#client.py
+
+import requests
+data = {
+'a':10,
+'b':20
+}
+
+
+
+
+
+
+
+ 
